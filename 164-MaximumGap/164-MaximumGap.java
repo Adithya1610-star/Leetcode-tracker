@@ -1,0 +1,14 @@
+// Last updated: 7/9/2026, 9:15:38 AM
+class Solution {
+    public int maximumGap(int[] nums) {
+        if(nums.length < 2) {
+            return 0;
+        }
+        Arrays.sort(nums);
+        int diff = 0;
+        for(int i=1; i<nums.length; i++) {
+            diff = Math.max(diff, nums[i] - nums[i-1]);
+        }
+        return diff;
+    }
+} 
